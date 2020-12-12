@@ -22,8 +22,8 @@
                 <table class="table table-striped">
                     <thead class="thead-light">
                     <tr>
-                        <th scope="col">name</th>
-                        <th scope="col">price</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
                     </tr>
                     </thead>
                     <tbody>
