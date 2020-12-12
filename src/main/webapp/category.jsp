@@ -5,34 +5,32 @@
 <html>
 
 <jsp:include page="head-default.jsp">
-    <jsp:param name="title" value="Meal Overview"/>
+    <jsp:param name="title" value="Category Details"/>
 </jsp:include>
 
 <body>
 
 <jsp:include page="navbar.jsp">
-    <jsp:param name="activePage" value="meals"/>
+    <jsp:param name="activePage" value="categorymeals"/>
 </jsp:include>
 
 <div class="container">
     <main>
-        <h1>Registered meals</h1>
+        <h1>Category Details</h1>
         <c:choose>
-            <c:when test="${not empty meals}">
+            <c:when test="${not empty categorymeals}">
                 <table class="table table-striped">
                     <thead class="thead-light">
                     <tr>
                         <th scope="col">name</th>
-                        <th scope="col">category</th>
                         <th scope="col">price</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="meal" items="${meals}">
+                    <c:forEach var="categorymeal" items="${categorymeals}">
                         <tr>
-                            <td><a href="Controller?command=MealDetails&name=${meal.name}"><c:out value='${meal.name}'/></a></td>
-                            <td><a href="Controller?command=CategoryDetails&category=${meal.category}"><c:out value="${meal.category}"/></a></td>
-                            <td> <c:out value="${meal.price}"/></td>
+                            <td><c:out value='${categorymeal.name}'/></td>
+                            <td> <c:out value="${categorymeal.price}"/></td>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -41,7 +39,7 @@
 
             </c:when>
             <c:otherwise>
-                <p><em>No meals found</em></p>
+                <p><em>No meals in this category found</em></p>
             </c:otherwise>
         </c:choose>
     </main>

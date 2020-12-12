@@ -6,25 +6,25 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class PatientsPage extends Page {
+public class MealsPage extends Page {
 
-    public PatientsPage(WebDriver driver) {
+    public MealsPage(WebDriver driver) {
         super(driver);
         driver.get(getPath()+"?command=Overview");
     }
 
-    public boolean containsPatientWithSSN (String ssn) {
+    public boolean containsMealsWithName (String name) {
         List<WebElement> trs = driver.findElements(By.cssSelector("td"));
         for (WebElement tr: trs) {
-            if (tr.getText().equals(ssn)){
+            if (tr.getText().equals(name)){
                 return true;
             }
         }
         return false;
     }
 
-    public boolean containsErrorMessage (String ssn) {
+    public boolean containsErrorMessage (String name) {
         WebElement error = driver.findElement(By.cssSelector("em"));
-        return error.getText().equals(ssn);
+        return error.getText().equals(name);
     }
 }

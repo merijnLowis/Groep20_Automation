@@ -1,24 +1,28 @@
 package ui;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class RegisterPage extends Page {
 
-    @FindBy(id="ssn")
-    private WebElement ssnField;
+    @FindBy(id="name")
+    private WebElement nameField;
 
-    @FindBy(id="gender")
-    private WebElement genderField;
+    @FindBy(id="category")
+    private WebElement categoryField;
 
-    @FindBy(id="weight")
-    private WebElement weightField;
+    @FindBy(id="price")
+    private WebElement priceField;
 
-    @FindBy(id="length")
-    private WebElement lengthField;
+    @FindBy(id="vegetarian")
+    private WebElement vegetarianField;
+
+    @FindBy(id="lactose")
+    private WebElement lactoseField;
+
+    @FindBy(id="nuts")
+    private WebElement nutsField;
 
     @FindBy(id="register")
     private WebElement registerButton;
@@ -28,24 +32,35 @@ public class RegisterPage extends Page {
         this.driver.get(getPath()+"?command=SignUp");
     }
 
-    public void setSSN(String ssn) {
-        ssnField.clear();
-        ssnField.sendKeys(ssn);
+    public void setName(String name) {
+        nameField.clear();
+        nameField.sendKeys(name);
     }
 
-    public void setGender(String gender) {
-        genderField.clear();
-        genderField.sendKeys(gender);
+    public void setCategory(String category) {
+        categoryField.clear();
+        categoryField.sendKeys(category);
     }
 
-    public void setWeight(String height) {
-        weightField.clear();
-        weightField.sendKeys(height);
+    public void setPrice(double price) {
+        String prijs = "" + price;
+        vegetarianField.clear();
+        vegetarianField.sendKeys(prijs);
     }
 
-    public void setLength(String length) {
-        lengthField.clear();
-        lengthField.sendKeys(length);
+    public void setVegetarian() {
+        vegetarianField.clear();
+        vegetarianField.click();
+    }
+
+    public void setLactose() {
+        lactoseField.clear();
+        lactoseField.click();
+    }
+
+    public void setNuts() {
+        nutsField.clear();
+        nutsField.click();
     }
 
     public void submitValid() {
