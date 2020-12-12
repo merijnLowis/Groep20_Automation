@@ -60,8 +60,6 @@ public class ViewExtraInformationSteps {
     public void Jan_krijgt_informatie_dat_eerste_broodje_sporen_van_noten_bevat_en_veggylicious_vegetarisch_is() {
         currentPage = PageFactory.initElements(driver, ExtraInformationPage.class);
         assertEquals("Meal Details - Meal app", driver.getTitle());
-        assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("No"));
-        assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("No"));
         assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("Yes"));
         assertTrue(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("No"));
 
@@ -69,8 +67,6 @@ public class ViewExtraInformationSteps {
         assertEquals("Meal Details - Meal app", driver.getTitle());
         assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("Yes"));
         assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("No"));
-        assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("No"));
-        assertTrue(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("Yes"));
     }
 
     @Given("Broodje spelt dat glutenvrij is")
@@ -94,7 +90,5 @@ public class ViewExtraInformationSteps {
         assertEquals("Meal Details - Meal app", driver.getTitle());
         assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("Yes"));
         assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("No"));
-        assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("No"));
-        assertTrue(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("No"));
     }
 }

@@ -45,7 +45,7 @@ public class MealService {
     public List<Meal> getMealsWithCategories(String category) {
         List<Meal> categories = new ArrayList<Meal>();
         for (Meal meal: meals) {
-            if (meal.getCategory().equals(category) && !categories.contains(meal)) {
+            if (meal.getCategory().equalsIgnoreCase(category) && !categories.contains(meal)) {
                 categories.add(meal);
             }
         }
