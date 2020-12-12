@@ -9,7 +9,6 @@ public class MealService {
 
     private static MealService INSTANCE;
     private List<Meal> meals = new ArrayList<Meal>();
-    private List<Meal> categories = new ArrayList<Meal>();
 
     public MealService() {
     }
@@ -44,8 +43,9 @@ public class MealService {
     }
 
     public List<Meal> getMealsWithCategories(String category) {
+        List<Meal> categories = new ArrayList<Meal>();
         for (Meal meal: meals) {
-            if (meal.getCategory().equals(category)) {
+            if (meal.getCategory().equals(category) && !categories.contains(meal)) {
                 categories.add(meal);
             }
         }
