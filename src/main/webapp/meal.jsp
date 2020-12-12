@@ -36,7 +36,7 @@
         <table class="table table-striped">
             <thead class="thead-light">
             <tr>
-                <th scope="row">is vegetarian?</th>
+                <th scope="row">Is vegetarian?</th>
                 <td>${meal.vegetarian ? "Yes" : "No"}</td>
             </tr>
             <tr>
