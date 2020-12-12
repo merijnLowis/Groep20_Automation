@@ -30,7 +30,7 @@
                     <c:forEach var="categorymeal" items="${categorymeals}">
                         <tr>
                             <td><c:out value='${categorymeal.name}'/></td>
-                            <td> <c:out value="${categorymeal.price}"/></td>
+                            <td> <c:out value="${categorymeal.price} euro"/></td>
                         </tr>
                     </c:forEach>
                     </tbody>

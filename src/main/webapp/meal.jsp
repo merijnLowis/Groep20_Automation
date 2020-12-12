@@ -29,7 +29,7 @@
                     </tr>
                     <tr>
                         <th scope="row">price</th>
-                        <td><c:out value='${meal.price}'/></td>
+                        <td><c:out value='${meal.price} euro'/></td>
                     </tr>
                 </thead>
             </table>

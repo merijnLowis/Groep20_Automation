@@ -32,7 +32,7 @@
                         <tr>
                             <td><a href="Controller?command=MealDetails&name=${meal.name}"><c:out value='${meal.name}'/></a></td>
                             <td><a href="Controller?command=CategoryDetails&category=${meal.category}"><c:out value="${meal.category}"/></a></td>
-                            <td> <c:out value="${meal.price}"/></td>
+                            <td> <c:out value="${meal.price} euro"/></td>
                         </tr>
                     </c:forEach>
                     </tbody>
