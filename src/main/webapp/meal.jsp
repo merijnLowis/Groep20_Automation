@@ -11,7 +11,7 @@
 <body>
 
 <jsp:include page="navbar.jsp">
-    <jsp:param name="activePage" value="mealdetails"/>
+    <jsp:param name="activePage" value="meal"/>
 </jsp:include>
 
 <div class="container">
