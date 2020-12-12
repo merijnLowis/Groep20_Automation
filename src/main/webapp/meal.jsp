@@ -36,16 +36,16 @@
         <table class="table table-striped">
             <thead class="thead-light">
             <tr>
-                <th scope="row">vegetarian</th>
-                <td><c:out value='${meal.vegetarian}'/></td>
+                <th scope="row">Vegetarian</th>
+                <td>${meal.vegetarian ? "Yes" : "No"}</td>
             </tr>
             <tr>
-                <th scope="row">lactose</th>
-                <td><c:out value='${meal.lactose}'/></td>
+                <th scope="row">Contains Lactose</th>
+                <td>${meal.containsLactose ? "Yes" : "No"}</td>
             </tr>
             <tr>
-                <th scope="row">nuts</th>
-                <td><c:out value='${meal.nuts}'/></td>
+                <th scope="row">Contains Nuts</th>
+                <td>${meal.containsNuts ? "Yes" : "No"}</td>
             </tr>
             </thead>
         </table>
