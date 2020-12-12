@@ -11,12 +11,12 @@
 <body>
 
 <jsp:include page="navbar.jsp">
-    <jsp:param name="activePage" value="mealdetails"/>
+    <jsp:param name="activePage" value="meal"/>
 </jsp:include>
 
 <div class="container">
     <main>
-        <h1>Patient Details</h1>
+        <h1>Meal Details</h1>
             <table class="table table-striped">
                 <thead class="thead-light">
                     <tr>

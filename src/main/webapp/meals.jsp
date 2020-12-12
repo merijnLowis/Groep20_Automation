@@ -23,12 +23,16 @@
                     <thead class="thead-light">
                     <tr>
                         <th scope="col">name</th>
+                        <th scope="col">category</th>
+                        <th scope="col">price</th>
                     </tr>
                     </thead>
                     <tbody>
                     <c:forEach var="meal" items="${meals}">
                         <tr>
                             <td><a href="Controller?command=MealDetails&name=${meal.name}"><c:out value='${meal.name}'/></a></td>
+                            <td> <c:out value="${meal.category}"/></td>
+                            <td> <c:out value="${meal.price}"/></td>
                         </tr>
                     </c:forEach>
                     </tbody>

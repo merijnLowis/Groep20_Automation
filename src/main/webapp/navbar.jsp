@@ -11,6 +11,9 @@
                     <li class="nav-item<c:if test="${param.activePage eq 'meals'}"> active</c:if>">
                         <a class="nav-link" href="${pageContext.request.contextPath }/Controller?command=Overview">Registered meals</a>
                     </li>
+                <li class="nav-item<c:if test="${param.activePage eq 'meals'}"> active</c:if>">
+                    <a class="nav-link" href="${pageContext.request.contextPath }/Controller?command=SignUp">Register meal</a>
+                </li>
             </ul>
         </div>
     </nav>
