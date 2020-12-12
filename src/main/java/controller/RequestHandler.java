@@ -11,6 +11,10 @@ public abstract class RequestHandler {
 
     public abstract String handleRequest (HttpServletRequest request, HttpServletResponse response);
 
+    public void setModel (MealService contactTracingService) {
+        this.service = contactTracingService;
+    }
+
     public MealService getService() {
         return service;
     }

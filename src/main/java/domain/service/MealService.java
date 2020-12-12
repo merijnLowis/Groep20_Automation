@@ -1,7 +1,6 @@
 package domain.service;
 
 import domain.model.Meal;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,13 +19,6 @@ public class MealService {
         return INSTANCE;
     }
 
-    public Meal getMeal(String name) {
-        for (Meal meal : meals) {
-            if (meal.getName().equals(name)) return meal;
-        }
-        return null;
-    }
-
     public List<Meal> getAllMeals () {
         return meals;
     }
@@ -35,7 +27,20 @@ public class MealService {
         meals.add(meal);
     }
 
+    public void delete (String name) {
+
+    }
+
     public void deleteAll () {
         meals = new ArrayList<Meal>();
+    }
+
+    public Meal getMealsWithName(String name) {
+        for (Meal meal: meals) {
+            if (meal.getName().equals(name)) {
+                return meal;
+            }
+        }
+        return null;
     }
 }
