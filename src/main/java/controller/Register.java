@@ -11,17 +11,11 @@ public class Register extends RequestHandler {
         String name = request.getParameter("name");
         String category = request.getParameter("category");
         double price = Double.parseDouble(request.getParameter("price"));
-        Boolean vegetarian = checkBoxToBoolean(request.getParameter("vegetarian"));
-        Boolean lactose = checkBoxToBoolean(request.getParameter("lactose"));
-        Boolean nuts = checkBoxToBoolean(request.getParameter("nuts"));
+        Boolean vegetarian = request.getParameter("vegetarian") != null;
+        Boolean lactose = request.getParameter("lactose") != null;
+        Boolean nuts = request.getParameter("nuts") != null;
         Meal meal = new Meal(name, category, price, vegetarian, lactose, nuts);
         service.add(meal);
         return "index.jsp";
-    }
-
-    private Boolean checkBoxToBoolean(String s) {
-        if (s == null || s.isEmpty()) return false;
-        if (s.equals("on")) return true;
-        return false;
     }
 }
