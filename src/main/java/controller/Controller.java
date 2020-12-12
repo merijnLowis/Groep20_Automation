@@ -1,7 +1,5 @@
 package controller;
 
-import domain.service.MealService;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

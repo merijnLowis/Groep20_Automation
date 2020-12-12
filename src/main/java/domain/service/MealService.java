@@ -1,5 +1,6 @@
 package domain.service;
 
+import domain.model.DomainException;
 import domain.model.Meal;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,7 @@ public class MealService {
     }
 
     public void add (Meal meal) {
+        if (getMealWithName(meal.getName()) != null) throw new DomainException("LeMeal is already added");
         meals.add(meal);
     }
 
