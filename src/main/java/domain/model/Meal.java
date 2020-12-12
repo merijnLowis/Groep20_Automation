@@ -4,17 +4,19 @@ public class Meal {
     private String name;
     private  String category;
     private double price;
+    private boolean gluten;
     private boolean vegetarian;
     private boolean containsLactose;
     private boolean containsNuts;
 
-    public Meal(String name, String category, double price, Boolean vegetarian, Boolean lactose, Boolean nuts){
+    public Meal(String name, String category, double price, Boolean vegetarian, Boolean lactose, Boolean nuts, Boolean gluten){
         setName(name);
         setCategory(category);
         setPrice(price);
         setVegetarian(vegetarian);
         setContainsLactose(lactose);
         setContainsNuts(nuts);
+        setGluten(gluten);
     }
 
     public Meal(String name, String category, double price){
@@ -75,5 +77,13 @@ public class Meal {
 
     public Boolean getContainsNuts() {
         return containsNuts;
+    }
+
+    public void setGluten(Boolean gluten) {
+        this.gluten = gluten;
+    }
+
+    public Boolean getGluten() {
+        return gluten;
     }
 }

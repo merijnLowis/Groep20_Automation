@@ -9,7 +9,7 @@ Feature: Maaltijdoverzicht
 
   Scenario: Alle maaltijden worden getoond
     Given dat er maaltijden op het menu staan
-    When Jan op het menu kijkt
+    When Jan dan op het menu kijkt
     Then worden alle maaltijden getoond die op het menu staan
 
 

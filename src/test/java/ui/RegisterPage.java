@@ -24,6 +24,9 @@ public class RegisterPage extends Page {
     @FindBy(id="nuts")
     private WebElement nutsField;
 
+    @FindBy(id="gluten")
+    private WebElement glutenField;
+
     @FindBy(id="register")
     private WebElement registerButton;
 
@@ -61,6 +64,11 @@ public class RegisterPage extends Page {
     public void setNuts() {
         nutsField.clear();
         nutsField.click();
+    }
+
+    public void setGluten() {
+        glutenField.clear();
+        glutenField.click();
     }
 
     public void submitValid() {

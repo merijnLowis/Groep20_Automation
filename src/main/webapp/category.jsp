@@ -16,7 +16,7 @@
 
 <div class="container">
     <main>
-        <h1>Category Details</h1>
+        <h1>Category Details about <c:out value='${categoryName}'/></h1>
         <c:choose>
             <c:when test="${not empty categorymeals}">
                 <table class="table table-striped">

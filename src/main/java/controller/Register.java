@@ -14,7 +14,8 @@ public class Register extends RequestHandler {
         Boolean vegetarian = checkBoxToBoolean(request.getParameter("vegetarian"));
         Boolean lactose = checkBoxToBoolean(request.getParameter("lactose"));
         Boolean nuts = checkBoxToBoolean(request.getParameter("nuts"));
-        Meal meal = new Meal(name, category, price, vegetarian, lactose, nuts);
+        Boolean gluten = checkBoxToBoolean(request.getParameter("gluten"));
+        Meal meal = new Meal(name, category, price, vegetarian, lactose, nuts, gluten);
         service.add(meal);
         return "index.jsp";
     }

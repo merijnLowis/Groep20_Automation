@@ -41,6 +41,12 @@
                 <label for="nuts">Nuts?</label>
                 <input type="checkbox" id="nuts" name="nuts">
             </p>
+
+            <p>
+                <label for="gluten">Gluten?</label>
+                <input type="checkbox" id="gluten" name="gluten">
+            </p>
+
             <p>
                 <input type="submit" id="register" value="Register">
             </p>

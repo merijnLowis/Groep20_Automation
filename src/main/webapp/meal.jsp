@@ -47,6 +47,11 @@
                 <th scope="row">Contains nuts?</th>
                 <td>${meal.containsNuts ? "Yes" : "No"}</td>
             </tr>
+
+            <tr>
+                <th scope="row">Contains gluten?</th>
+                <td>${meal.gluten ? "Yes" : "No"}</td>
+            </tr>
             </thead>
         </table>
     </main>
