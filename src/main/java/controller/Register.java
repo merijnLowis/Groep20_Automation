@@ -1,7 +1,6 @@
 package controller;
 
 import domain.model.Patient;
-import domain.service.PatientService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
