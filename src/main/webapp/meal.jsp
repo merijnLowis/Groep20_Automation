@@ -20,15 +20,15 @@
             <table class="table table-striped">
                 <thead class="thead-light">
                     <tr>
-                        <th scope="row">name</th>
+                        <th scope="row">Name</th>
                         <td><c:out value='${meal.name}'/></td>
                     </tr>
                     <tr>
-                        <th scope="row">category</th>
+                        <th scope="row">Category</th>
                         <td><c:out value='${meal.category}'/></td>
                     </tr>
                     <tr>
-                        <th scope="row">price</th>
+                        <th scope="row">Price</th>
                         <td><c:out value='${meal.price} euro'/></td>
                     </tr>
                 </thead>
@@ -36,15 +36,15 @@
         <table class="table table-striped">
             <thead class="thead-light">
             <tr>
-                <th scope="row">Vegetarian</th>
+                <th scope="row">is vegetarian?</th>
                 <td>${meal.vegetarian ? "Yes" : "No"}</td>
             </tr>
             <tr>
-                <th scope="row">Contains Lactose</th>
+                <th scope="row">Contains lactose?</th>
                 <td>${meal.containsLactose ? "Yes" : "No"}</td>
             </tr>
             <tr>
-                <th scope="row">Contains Nuts</th>
+                <th scope="row">Contains nuts?</th>
                 <td>${meal.containsNuts ? "Yes" : "No"}</td>
             </tr>
             </thead>
