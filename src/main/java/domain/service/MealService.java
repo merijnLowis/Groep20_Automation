@@ -27,15 +27,11 @@ public class MealService {
         meals.add(meal);
     }
 
-    public void delete (String name) {
-
-    }
-
     public void deleteAll () {
         meals = new ArrayList<Meal>();
     }
 
-    public Meal getMealsWithName(String name) {
+    public Meal getMealWithName(String name) {
         for (Meal meal: meals) {
             if (meal.getName().equals(name)) {
                 return meal;

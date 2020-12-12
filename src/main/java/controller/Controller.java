@@ -12,7 +12,6 @@ import java.io.IOException;
 @WebServlet("/Controller")
 public class Controller extends HttpServlet {
 
-    private MealService service = MealService.getInstance();
     private HandlerFactory handlerFactory = new HandlerFactory();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
