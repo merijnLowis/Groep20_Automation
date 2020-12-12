@@ -5,37 +5,37 @@
 <html>
 
 <jsp:include page="head-default.jsp">
-    <jsp:param name="title" value="Patient Overview"/>
+    <jsp:param name="title" value="Meal Overview"/>
 </jsp:include>
 
 <body>
 
 <jsp:include page="navbar.jsp">
-    <jsp:param name="activePage" value="persons"/>
+    <jsp:param name="activePage" value="meals"/>
 </jsp:include>
 
 <div class="container">
     <main>
-        <h1>Registered patients</h1>
+        <h1>Registered meals</h1>
         <c:choose>
-            <c:when test="${not empty patients}">
+            <c:when test="${not empty meals}">
                 <table class="table table-striped">
                     <thead class="thead-light">
                     <tr>
-                        <th scope="col">SSN</th>
+                        <th scope="col">name</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="patient" items="${patients}">
+                    <c:forEach var="meal" items="${meals}">
                         <tr>
-                            <td><a href="Controller?command=PatientDetails&ssn=${patient.SSN}"><c:out value='${patient.SSN}'/></a></td>
+                            <td><a href="Controller?command=MealDetails&name=${meal.name}"><c:out value='${meal.name}'/></a></td>
                         </tr>
                     </c:forEach>
                     </tbody>
                 </table>
             </c:when>
             <c:otherwise>
-                <p><em>No patients found</em></p>
+                <p><em>No meals found</em></p>
             </c:otherwise>
         </c:choose>
     </main>

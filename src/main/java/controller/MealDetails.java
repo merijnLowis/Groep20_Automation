@@ -9,6 +9,6 @@ public class MealDetails extends RequestHandler{
         String name = request.getParameter("name");
         request.setAttribute("meals", service.getMealWithName(name));
         System.out.println(service.getMealWithName(name).getName());
-        return "patients.jsp";
+        return "meal.jsp";
     }
 }
