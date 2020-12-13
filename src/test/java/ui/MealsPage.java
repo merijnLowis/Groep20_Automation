@@ -27,12 +27,12 @@ public class MealsPage extends Page {
         List<WebElement> trs = driver.findElements(By.tagName("tr"));
         for (WebElement tr : trs) {
             List<WebElement> tds = tr.findElements(By.tagName("td"));
-                if(tds.size()>2) {
-                    String productName = tds.get(0).getText();
-                    if (meal.equals(productName) && price.equals(tds.get(2).getText())) {
-                        return true;
-                    }
+            if(tds.size()>2) {
+                String productName = tds.get(0).getText();
+                if (meal.equals(productName) && price.equals(tds.get(2).getText())) {
+                    return true;
                 }
+            }
 
         }
         return  false;

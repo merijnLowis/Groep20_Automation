@@ -23,7 +23,7 @@ public class ViewMaaltijdenOverzichtSteps {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", Maintest.getDirverPath());
+        System.setProperty("webdriver.chrome.driver", Maintest.getDriverPath());
         driver = new ChromeDriver();
     }
 
@@ -35,8 +35,7 @@ public class ViewMaaltijdenOverzichtSteps {
 
     @Given("dat er maaltijden op het menu staan")
     public void dat_er_maaltijden_op_het_menu_staan() {
-        System.setProperty("webdriver.chrome.driver", "/home/lucas/Downloads/chromedriver");
-        driver = new ChromeDriver();
+        setUp();
         RegisterPage page = PageFactory.initElements(driver, RegisterPage.class);
         page.setName("broodje martino");
         page.setCategory("broodje");

@@ -1,8 +1,8 @@
 package ui;
 
 public class Maintest {
-    public static String getDirverPath() {
-        return "/home/lucas/Downloads/chromedriver";
+    public static String getDriverPath() {
+        return "C:\\Users\\PC-Matthias\\Desktop\\UCLL\\webontwikkeling\\chromedriver\\chromedriver.exe";
     }
 
 

@@ -20,7 +20,7 @@ public class ViewExtraInformationSteps {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", Maintest.getDirverPath());
+        System.setProperty("webdriver.chrome.driver", Maintest.getDriverPath());
         driver = new ChromeDriver();
     }
 
