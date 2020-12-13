@@ -22,7 +22,7 @@ public class ViewMaaltijdenOverzichtSteps {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\PC-Matthias\\Desktop\\UCLL\\webontwikkeling\\web3\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\PC-Matthias\\Desktop\\UCLL\\webontwikkeling\\chromedriver\\chromedriver.exe");
         driver = new ChromeDriver();
     }
 

@@ -25,6 +25,10 @@
                         <th scope="col">Name</th>
                         <th scope="col">Category</th>
                         <th scope="col">Price</th>
+                        <th scope="row">Is vegetarian?</th>
+                        <th scope="row">Contains lactose?</th>
+                        <th scope="row">Contains nuts?</th>
+                        <th scope="row">Contains gluten?</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -33,6 +37,10 @@
                             <td><a href="Controller?command=MealDetails&name=${meal.name}"><c:out value='${meal.name}'/></a></td>
                             <td><a href="Controller?command=CategoryDetails&category=${meal.category}"><c:out value="${meal.category}"/></a></td>
                             <td> <c:out value="${meal.price} euro"/></td>
+                            <td>${meal.vegetarian ? "Yes" : "No"}</td>
+                            <td>${meal.containsLactose ? "Yes" : "No"}</td>
+                            <td>${meal.containsNuts ? "Yes" : "No"}</td>
+                            <td>${meal.gluten ? "Yes" : "No"}</td>
                         </tr>
                     </c:forEach>
                     </tbody>
