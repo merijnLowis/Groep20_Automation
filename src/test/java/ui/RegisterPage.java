@@ -52,7 +52,6 @@ public class RegisterPage extends Page {
     }
 
     public void setVegetarian() {
-
         vegetarianField.click();
     }
 
