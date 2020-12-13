@@ -24,7 +24,7 @@ public class ViewMealsByCategorieSteps {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\PC-Matthias\\Desktop\\UCLL\\webontwikkeling\\web3\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/home/lucas/Downloads/chromedriver");
         driver = new ChromeDriver();
     }
 

@@ -47,27 +47,24 @@ public class RegisterPage extends Page {
 
     public void setPrice(double price) {
         String prijs = "" + price;
-        vegetarianField.clear();
-        vegetarianField.sendKeys(prijs);
+        priceField.clear();
+        priceField.sendKeys(prijs);
     }
 
     public void setVegetarian() {
-        vegetarianField.clear();
+
         vegetarianField.click();
     }
 
     public void setLactose() {
-        lactoseField.clear();
         lactoseField.click();
     }
 
     public void setNuts() {
-        nutsField.clear();
         nutsField.click();
     }
 
     public void setGluten() {
-        glutenField.clear();
         glutenField.click();
     }
 

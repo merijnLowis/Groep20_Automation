@@ -23,7 +23,7 @@ public class ViewExtraInformationSteps {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\PC-Matthias\\Desktop\\UCLL\\webontwikkeling\\web3\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/home/lucas/Downloads/chromedriver");
         driver = new ChromeDriver();
     }
 
@@ -35,7 +35,10 @@ public class ViewExtraInformationSteps {
 
     @Given("Broodje met walnoten en broodje veggylicious")
     public void Broodje_met_walnoten_en_broodje_veggylicious() {
-        RegisterPage page = PageFactory.initElements(driver, RegisterPage.class);
+        System.setProperty("webdriver.chrome.driver", "/home/lucas/Downloads/chromedriver");
+        driver = new ChromeDriver();
+        RegisterPage page =new RegisterPage(driver);
+        PageFactory.initElements(driver,page);
         page.setName("broodje met walnoten");
         page.setCategory("broodje");
         page.setPrice(7);

@@ -22,7 +22,7 @@ public class ViewMaaltijdenOverzichtSteps {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\PC-Matthias\\Desktop\\UCLL\\webontwikkeling\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/home/lucas/Downloads/chromedriver");
         driver = new ChromeDriver();
     }
 
@@ -34,6 +34,8 @@ public class ViewMaaltijdenOverzichtSteps {
 
     @Given("dat er maaltijden op het menu staan")
     public void dat_er_maaltijden_op_het_menu_staan() {
+        System.setProperty("webdriver.chrome.driver", "/home/lucas/Downloads/chromedriver");
+        driver = new ChromeDriver();
         RegisterPage page = PageFactory.initElements(driver, RegisterPage.class);
         page.setName("broodje martino");
         page.setCategory("broodje");
@@ -63,7 +65,7 @@ public class ViewMaaltijdenOverzichtSteps {
 
     @Then("worden alle maaltijden getoond die op het menu staan")
     public void worden_alle_maaltijden_getoond_die_op_het_menu_staan() {
-        assertEquals("Meal Details - Meal app", driver.getTitle());
+        assertEquals("Meal Overview - Meal app", driver.getTitle());
         assertTrue(((MealsPage)currentPage).containsMealsWithName("broodje martino"));
         assertTrue(((MealsPage)currentPage).containsMealsWithName("lasagne"));
         assertTrue(((MealsPage)currentPage).containsMealsWithName("tomatensoep"));
@@ -71,6 +73,8 @@ public class ViewMaaltijdenOverzichtSteps {
 
     @Given("er geen maaltijden op het menu staan")
     public void er_geen_maaltijden_op_het_menu_staan() {
+        System.setProperty("webdriver.chrome.driver", "/home/lucas/Downloads/chromedriver");
+        driver = new ChromeDriver();
         driver.get(path+"?command=DeleteAll");
 
     }
@@ -87,5 +91,6 @@ public class ViewMaaltijdenOverzichtSteps {
         assertFalse(((MealsPage)currentPage).containsMealsWithName("lasagne"));
         assertFalse(((MealsPage)currentPage).containsMealsWithName("tomatensoep"));
         assertTrue(((MealsPage)currentPage).containsErrorMessage("No meals found"));
+        clean();
     }
 }
