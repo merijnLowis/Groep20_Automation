@@ -8,9 +8,9 @@ import java.util.List;
 
 public class CategoryPage extends Page{
 
-    public CategoryPage(WebDriver driver) {
+    public CategoryPage(WebDriver driver, String category) {
         super(driver);
-        driver.get(getPath()+"?command=CategoryDetails");
+        driver.get(getPath()+"?command=CategoryDetails&category="+category);
     }
 
     public boolean containsMealsWithCategory (String category) {

@@ -13,8 +13,7 @@ import ui.MealsPage;
 import ui.Page;
 import ui.RegisterPage;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class ViewMealsByCategorieSteps {
     private WebDriver driver;
@@ -66,11 +65,12 @@ public class ViewMealsByCategorieSteps {
 
     @Then("kan Jan een lijst met categorieen zien en deze zijn producten")
     public void Kan_Jan_een_lijst_met_categorieen_zien_en_deze_zijn_producten() {
-        currentPage = PageFactory.initElements(driver, CategoryPage.class);
+        CategoryPage categoryPage=new CategoryPage(driver,"broodje");
+        PageFactory.initElements(driver, categoryPage);
         assertEquals("Category Details - Meal app", driver.getTitle());
-        assertTrue(((CategoryPage)currentPage).containsMealsWithCategory("broodje martino"));
-        assertTrue(((CategoryPage)currentPage).containsMealsWithCategory("lasagne"));
-        assertTrue(((CategoryPage)currentPage).containsMealsWithCategory("tomatensoep"));
+        assertTrue((categoryPage).containsMealsWithCategory("broodje martino"));
+        assertFalse((categoryPage).containsMealsWithCategory("lasagne"));
+        assertFalse((categoryPage).containsMealsWithCategory("tomatensoep"));
         clean();
     }
 
