@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import ui.MealsPage;
 import ui.Page;
 import ui.RegisterPage;
+import ui.Maintest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -23,7 +24,7 @@ public class ViewPriceSteps {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/home/lucas/Downloads/chromedriver");
+        System.setProperty("webdriver.chrome.driver", Maintest.getDirverPath());
         driver = new ChromeDriver();
     }
 

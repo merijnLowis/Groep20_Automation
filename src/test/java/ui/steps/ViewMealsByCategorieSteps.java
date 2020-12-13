@@ -8,10 +8,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import ui.CategoryPage;
-import ui.MealsPage;
-import ui.Page;
-import ui.RegisterPage;
+import ui.*;
 
 import static org.junit.Assert.*;
 
@@ -23,7 +20,7 @@ public class ViewMealsByCategorieSteps {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/home/lucas/Downloads/chromedriver");
+        System.setProperty("webdriver.chrome.driver", Maintest.getDirverPath());
         driver = new ChromeDriver();
     }
 
