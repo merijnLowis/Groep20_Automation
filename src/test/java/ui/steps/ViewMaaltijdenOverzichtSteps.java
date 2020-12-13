@@ -75,8 +75,7 @@ public class ViewMaaltijdenOverzichtSteps {
 
     @Given("er geen maaltijden op het menu staan")
     public void er_geen_maaltijden_op_het_menu_staan() {
-        System.setProperty("webdriver.chrome.driver", "/home/lucas/Downloads/chromedriver");
-        driver = new ChromeDriver();
+        setUp();
         driver.get(path+"?command=DeleteAll");
 
     }
