@@ -10,7 +10,7 @@ public class CategoryPage extends Page{
 
     public CategoryPage(WebDriver driver) {
         super(driver);
-        driver.get(getPath()+"?command=CategoryDetails");
+        driver.get(getPath()+"?command=CategoryDetails&category=broodje");
     }
 
     public boolean containsMealsWithCategory (String category) {
