@@ -35,8 +35,7 @@ public class ViewExtraInformationSteps {
 
     @Given("Broodje met walnoten en broodje veggylicious")
     public void Broodje_met_walnoten_en_broodje_veggylicious() {
-        System.setProperty("webdriver.chrome.driver", "/home/lucas/Downloads/chromedriver");
-        driver = new ChromeDriver();
+        setUp();
         RegisterPage page =new RegisterPage(driver);
         PageFactory.initElements(driver,page);
         page.setName("broodje met walnoten");
@@ -56,24 +55,27 @@ public class ViewExtraInformationSteps {
 
     @When("Jan deze broodjes op het menu ziet")
     public void Jan_deze_broodjes_op_het_menu_ziet() {
+
         currentPage = PageFactory.initElements(driver, MealsPage.class);
     }
 
     @Then("Jan krijgt informatie dat eerste broodje sporen van noten bevat en veggylicious vegetarisch is")
     public void Jan_krijgt_informatie_dat_eerste_broodje_sporen_van_noten_bevat_en_veggylicious_vegetarisch_is() {
         currentPage = PageFactory.initElements(driver, ExtraInformationPage.class);
-        assertEquals("Meal Details - Meal app", driver.getTitle());
+        assertEquals("Meal Overview - Meal app", driver.getTitle());
         assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("Yes"));
         assertTrue(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("No"));
 
         currentPage = PageFactory.initElements(driver, ExtraInformationPage.class);
-        assertEquals("Meal Details - Meal app", driver.getTitle());
+        assertEquals("Meal Overview - Meal app", driver.getTitle());
         assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("Yes"));
         assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("No"));
+        clean();
     }
 
     @Given("Broodje spelt dat glutenvrij is")
     public void Broodje_spelt_dat_glutenvrij_is() {
+        setUp();
         RegisterPage page = PageFactory.initElements(driver, RegisterPage.class);
         page.setName("broodje spelt");
         page.setCategory("broodje");
@@ -93,5 +95,6 @@ public class ViewExtraInformationSteps {
         assertEquals("Meal Details - Meal app", driver.getTitle());
         assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("Yes"));
         assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("No"));
+        clean();
     }
 }

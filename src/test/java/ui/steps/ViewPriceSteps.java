@@ -35,6 +35,7 @@ public class ViewPriceSteps {
 
     @Given("broodje martino en lasagne")
     public void broodje_martino_en_lasagne() {
+        setUp();
         RegisterPage page = PageFactory.initElements(driver, RegisterPage.class);
         page.setName("broodje martino");
         page.setCategory("broodje");
@@ -57,8 +58,9 @@ public class ViewPriceSteps {
 
     @Then("Krijgt Jan de informatie over de prijs en kan hij zo beslissen welke maaltijd hij wil bestellen")
     public void Krijgt_Jan_de_informatie_over_de_prijs_en_kan_hij_zo_beslissen_welek_maaltijd_hij_wil_bestellen() {
-        assertEquals("Meal Details - Meal app", driver.getTitle());
+        assertEquals("Meal Overview - Meal app", driver.getTitle());
         assertTrue(((MealsPage)currentPage).containsMealsWithName("broodje martino"));
         assertTrue(((MealsPage)currentPage).containsMealsWithName("lasagne"));
+        clean();
     }
 }

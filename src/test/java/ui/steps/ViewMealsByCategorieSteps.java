@@ -36,6 +36,7 @@ public class ViewMealsByCategorieSteps {
 
     @Given("Lasagne, Broodje martino en tomatensoep staan op de menu en zijn beschikbaar")
     public void Lasagne_broodje_martino_en_tomatensoep_staan_op_de_menu_en_zijn_beschikbaar() {
+        setUp();
         RegisterPage page = PageFactory.initElements(driver, RegisterPage.class);
         page.setName("broodje martino");
         page.setCategory("broodje");
@@ -70,6 +71,7 @@ public class ViewMealsByCategorieSteps {
         assertTrue(((CategoryPage)currentPage).containsMealsWithCategory("broodje martino"));
         assertTrue(((CategoryPage)currentPage).containsMealsWithCategory("lasagne"));
         assertTrue(((CategoryPage)currentPage).containsMealsWithCategory("tomatensoep"));
+        clean();
     }
 
 }

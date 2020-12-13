@@ -69,6 +69,7 @@ public class ViewMaaltijdenOverzichtSteps {
         assertTrue(((MealsPage)currentPage).containsMealsWithName("broodje martino"));
         assertTrue(((MealsPage)currentPage).containsMealsWithName("lasagne"));
         assertTrue(((MealsPage)currentPage).containsMealsWithName("tomatensoep"));
+        clean();
     }
 
     @Given("er geen maaltijden op het menu staan")
