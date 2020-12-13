@@ -66,7 +66,7 @@ public class ViewExtraInformationSteps {
         //currentPage = PageFactory.initElements(driver, ExtraInformationPage.class);
         assertEquals("Meal Details - Meal app", driver.getTitle());
         assertTrue((extraInformationPage).containsExtraInformationOfMeal("Contains nuts?"));
-        assertTrue((extraInformationPage).containsExtraInformationOfMeal("Is vegetarian?"));
+        assertFalse((extraInformationPage).containsExtraInformationOfMeal("Is vegetarian?"));
         assertFalse((extraInformationPage).containsExtraInformationOfMeal("Contains lactose?"));
         assertFalse((extraInformationPage).containsExtraInformationOfMeal("Contains gluten?"));
 
@@ -76,7 +76,7 @@ public class ViewExtraInformationSteps {
         assertTrue((extraInformationPage).containsExtraInformationOfMeal("Is vegetarian?"));
         assertFalse((extraInformationPage).containsExtraInformationOfMeal("Contains nuts?"));
         assertFalse((extraInformationPage).containsExtraInformationOfMeal("Contains lactose?"));
-        assertFalse((extraInformationPage).containsExtraInformationOfMeal("Contains gluten?"));
+        assertTrue((extraInformationPage).containsExtraInformationOfMeal("Contains gluten?"));
         clean();
     }
 
@@ -98,10 +98,13 @@ public class ViewExtraInformationSteps {
 
     @Then("Jan krijgt informatie dat dit broodje glutenvrij is")
     public void Jan_krijgt_informatie_dat_dit_broodje_glutenvrij_is() {
-        currentPage = PageFactory.initElements(driver, ExtraInformationPage.class);
+        ExtraInformationPage extraInformationPage=new ExtraInformationPage(driver,"broodje spelt");
+        PageFactory.initElements(driver, extraInformationPage);
         assertEquals("Meal Details - Meal app", driver.getTitle());
-        assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("Yes"));
-        assertFalse(((ExtraInformationPage)currentPage).containsExtraInformationOfMeal("No"));
+        assertTrue((extraInformationPage).containsExtraInformationOfMeal("Is vegetarian?"));
+        assertFalse((extraInformationPage).containsExtraInformationOfMeal("Contains nuts?"));
+        assertFalse((extraInformationPage).containsExtraInformationOfMeal("Contains lactose?"));
+        assertFalse((extraInformationPage).containsExtraInformationOfMeal("Contains gluten?"));
         clean();
     }
 }

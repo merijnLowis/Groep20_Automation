@@ -14,10 +14,10 @@ public class ExtraInformationPage extends Page{
     }
 
     public boolean containsExtraInformationOfMeal (String warningType) {
-        List<WebElement> trs = driver.findElements(By.cssSelector("td"));
+        List<WebElement> trs = driver.findElements(By.cssSelector("tr"));
         for (WebElement tr: trs) {
-            WebElement th= trs.get(1);
-            WebElement td=trs.get(2);
+            WebElement th= tr.findElement(new By.ByTagName("th"));
+            WebElement td= tr.findElement(new By.ByTagName("td"));
             if (th.getText().equals(warningType)){
                 if(td.getText().equals("Yes")) return true;
                 else if(td.getText().equals("No")) return false;
