@@ -8,19 +8,22 @@ import java.util.List;
 
 public class ExtraInformationPage extends Page{
 
-    public ExtraInformationPage(WebDriver driver) {
+    public ExtraInformationPage(WebDriver driver, String meal) {
         super(driver);
-        driver.get(getPath()+"?command=MealDetails&name=broodje%20spelt");
+        driver.get(getPath()+"?command=MealDetails&name="+meal);
     }
 
-    public boolean containsExtraInformationOfMeal (String category) {
+    public boolean containsExtraInformationOfMeal (String warningType) {
         List<WebElement> trs = driver.findElements(By.cssSelector("td"));
         for (WebElement tr: trs) {
-            if (tr.getText().equals(category)){
-                return true;
+            WebElement th= trs.get(1);
+            WebElement td=trs.get(2);
+            if (th.getText().equals(warningType)){
+                if(td.getText().equals("Yes")) return true;
+                else if(td.getText().equals("No")) return false;
             }
         }
-        return false;
+        throw new RuntimeException("alles is een leugen");
     }
 
 }

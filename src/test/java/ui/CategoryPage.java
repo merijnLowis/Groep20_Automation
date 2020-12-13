@@ -13,10 +13,10 @@ public class CategoryPage extends Page{
         driver.get(getPath()+"?command=CategoryDetails&category="+category);
     }
 
-    public boolean containsMealsWithCategory (String category) {
+    public boolean containsMealsInCategory (String meal) {
         List<WebElement> trs = driver.findElements(By.cssSelector("td"));
         for (WebElement tr: trs) {
-            if (tr.getText().equals(category)){
+            if (tr.getText().equals(meal)){
                 return true;
             }
         }

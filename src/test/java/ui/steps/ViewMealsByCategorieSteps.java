@@ -68,9 +68,9 @@ public class ViewMealsByCategorieSteps {
         CategoryPage categoryPage=new CategoryPage(driver,"broodje");
         PageFactory.initElements(driver, categoryPage);
         assertEquals("Category Details - Meal app", driver.getTitle());
-        assertTrue((categoryPage).containsMealsWithCategory("broodje martino"));
-        assertFalse((categoryPage).containsMealsWithCategory("lasagne"));
-        assertFalse((categoryPage).containsMealsWithCategory("tomatensoep"));
+        assertTrue((categoryPage).containsMealsInCategory("broodje martino"));
+        assertFalse((categoryPage).containsMealsInCategory("lasagne"));
+        assertFalse((categoryPage).containsMealsInCategory("tomatensoep"));
         clean();
     }
 
