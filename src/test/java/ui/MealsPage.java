@@ -25,21 +25,15 @@ public class MealsPage extends Page {
 
     public boolean containsPrice(String meal , String price) {
         List<WebElement> trs = driver.findElements(By.tagName("tr"));
-        Boolean containsMeal = false;
         for (WebElement tr : trs) {
             List<WebElement> tds = tr.findElements(By.tagName("td"));
-            for (WebElement td : tds) {
-                String productName = td.getAttribute("innerHTML");
-                if (meal.equals(td.getAttribute("innerHTML"))) {
-                    containsMeal = true;
-
-                }
-                if (containsMeal && price.equals(td.getAttribute("innerHTML"))) {
-                    return true;
+                if(tds.size()>2) {
+                    String productName = tds.get(0).getText();
+                    if (meal.equals(productName) && price.equals(tds.get(2).getText())) {
+                        return true;
+                    }
                 }
 
-            }
-            containsMeal = false;
         }
         return  false;
     }

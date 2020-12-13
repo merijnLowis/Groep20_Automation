@@ -61,6 +61,9 @@ public class ViewPriceSteps {
         assertEquals("Meal Overview - Meal app", driver.getTitle());
         assertTrue(((MealsPage)currentPage).containsMealsWithName("broodje martino"));
         assertTrue(((MealsPage)currentPage).containsMealsWithName("lasagne"));
+        assertTrue(((((MealsPage) currentPage).containsPrice("broodje martino","6.0 euro"))));
+        assertTrue(((((MealsPage) currentPage).containsPrice("lasagne","15.0 euro"))));
+
         clean();
     }
 }
